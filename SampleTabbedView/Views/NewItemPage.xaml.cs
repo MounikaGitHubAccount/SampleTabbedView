@@ -30,24 +30,20 @@ namespace SampleTabbedView.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            if (Item.Name != "" && Item.Email != "" && Item.Designation != "" && Item.Mobile != "")
+            {
+                MessagingCenter.Send(this, "AddItem", Item);
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                await DisplayAlert("","Please enter all fields!","OK");
+            }
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
-        }
-
-        void Button_Clicked(System.Object sender, System.EventArgs e)
-        {
-            MessagingCenter.Send(this, "AddItem", Item);
-            Navigation.PopModalAsync();
-        }
-
-        void Button_Clicked_1(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PopModalAsync();
         }
     }
 }
