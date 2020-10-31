@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleTabbedView.Views.ItemsPage" Title="{Binding Title}" x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Register" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+        <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding Items}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20,0,20,0">
+                    <Frame Margin="20,10,20,10" BorderColor="LightGray" BackgroundColor="White">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0" HasShadow="False" CornerRadius="45" HeightRequest="50" WidthRequest="50" BorderColor="Gray">
+                                <Image Source="profile.png" Aspect="AspectFit"/>
+                            </Frame>
+                        <Grid Grid.Column="1" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="1" Text="{Binding Designation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            <Label Grid.Row="2" Text="{Binding Email}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="3" Text="{Binding Mobile}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"/>
+                        </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnItemSelected"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

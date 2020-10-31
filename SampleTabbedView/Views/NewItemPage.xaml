@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customControl="clr-namespace:SampleTabbedView.CustomRenders" x:Class="SampleTabbedView.Views.NewItemPage" Title="New Item">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <Frame Margin="20" Padding="0" BorderColor="LightGray">
+        <Grid RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+          <StackLayout Grid.Row="0" Spacing="0" Padding="15">
+            <Label Text="Name" FontSize="15" TextColor="Black" />
+            <customControl:CustomEntry Text="{Binding Item.Name}" FontSize="14" />
+            <Label Text="Designation" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Item.Designation}" FontSize="14" />
+            <Label Text="Email" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Item.Email}" FontSize="14" />
+            <Label Text="Mobile" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Item.Mobile}" FontSize="14" />
+          </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="0" Padding="15">
+          
+        <!--<Frame CornerRadius="0" x:Name="frameSearch" Margin="0,25,0,20" Grid.Row="1" BorderColor="#bebebe" HasShadow="False">
+            <Frame.Padding>
+                 <OnPlatform x:TypeArguments="Thickness">
+                       <On Platform="iOS" Value="0,0,0,0" />
+                       <On Platform="Android" Value="-10,0,0,0" />
+                 </OnPlatform>
+            </Frame.Padding>-->
+            <Grid>
+                    <customControl:CustomEntry Placeholder="Choose file" PlaceholderColor="#c8c9cd" FontSize="14" Grid.Column="0" x:Name="searchData" Margin="0,0,0,0" Text="" TextColor="Black" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+                    <Label Text="Upload" FontSize="14" Padding="10,5,20,5" HorizontalOptions="End" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="LightGray" TextColor="White"/>
+            </Grid>
+         <!-- </Frame>-->
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Cancel" TextColor="White" BackgroundColor="LightGray" Margin="10,0,30,0" Padding="0" Clicked="Button_Clicked"/>
+                <Button Grid.Column="1" Text="Save" TextColor="White" BackgroundColor="LightSkyBlue" Margin="30,0,10,0" Padding="0" Clicked="Button_Clicked_1"/>
+            </Grid>
+        </StackLayout>
+        </Grid>
+            </Frame>
+    </ContentPage.Content>
+</ContentPage>

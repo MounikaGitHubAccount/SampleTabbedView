@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SampleTabbedView.Views.AboutPage"
+    xmlns:vm="clr-namespace:SampleTabbedView.ViewModels"  x:Name="this"
+    xmlns:customrenders1="clr-namespace:SampleTabbedView.CustomRenders" Title="{Binding Title}">
+
+   <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+     <CollectionView x:Name="Items" ItemsSource="{Binding NewsFields}" SelectedItem="{Binding SelectedField, Mode=TwoWay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20,0,20,0">
+                    <Frame Margin="20,10,20,10" BorderColor="LightGray" BackgroundColor="White">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" >
+                                <Frame HasShadow="False" CornerRadius="0" BorderColor="Gray" Padding="0" HeightRequest="100" WidthRequest="100">
+                                <Grid>
+                                <Image Source="{Binding urlToImage}" Aspect="AspectFill" />
+                                <Label IsVisible="{Binding NoImage}" Text="No Image" TextColor="LightSkyBlue" FontSize="Micro" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            </StackLayout>
+                        <Grid Grid.Column="1" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding author}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="1" Text="{Binding title}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            <Label Grid.Row="2" Text="{Binding description}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="3" TextColor="#000000" TextDecorations="Underline" FontSize="18">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                  <customrenders1:HyperlinkSpan Text="{Binding source.name}"
+                                                        Url="{Binding url}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                   <Label.Margin>
+                                       <OnPlatform x:TypeArguments="Thickness">
+                                              <On Platform="iOS" Value="0,5,0,0" />
+                                              <On Platform="Android" Value="0,3,0,0" />
+                                        </OnPlatform>
+                                   </Label.Margin>
+                                 <Label.GestureRecognizers>
+                                <TapGestureRecognizer  Command="{Binding Path=BindingContext.NewsFieldCommand, Source={x:Reference this}}"
+                                                        CommandParameter="{Binding .}"/>
+                            </Label.GestureRecognizers>
+                               </Label>
+                        </Grid>
+                        </Grid>
+                    </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+</ContentPage>
