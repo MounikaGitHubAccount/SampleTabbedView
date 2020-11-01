@@ -16,10 +16,10 @@
                     <Frame Margin="20,10,20,10" BorderColor="LightGray" BackgroundColor="White">
                         <Grid ColumnSpacing="10">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0" >
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
                                 <Frame HasShadow="False" CornerRadius="0" BorderColor="Gray" Padding="0" HeightRequest="100" WidthRequest="100">
                                 <Grid>
                                 <Image Source="{Binding urlToImage}" Aspect="AspectFill" />
@@ -27,7 +27,7 @@
                                 </Grid>
                             </Frame>
                             </StackLayout>
-                        <Grid Grid.Column="1" RowSpacing="0">
+                        <Grid Grid.Column="0" RowSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>

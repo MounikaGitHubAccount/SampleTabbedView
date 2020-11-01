@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "cbcoPGbTQesXvKxphzxvFfnE+xMxn0S+cqRPmOwfvH/7Ck39NXXsc2HI8XAdAzoBeBc4uqqYw4zmEjt65aoX6A==",
+  "success": true,
+  "projectFilePath": "/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.iOS/SampleTabbedView.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/mounika.bandaru/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/xamarin.forms/4.6.0.1141/xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}

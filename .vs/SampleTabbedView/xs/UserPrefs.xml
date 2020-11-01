@@ -1,15 +1,30 @@
-﻿<Properties StartupConfiguration="{254CA2EF-F1D4-43F3-8D23-DD2F00F02091}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{34088161-495B-4262-816F-EA2AD562420C}|Default">
+  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5F021997-ED63-49D7-96D7-C6CF591EE64B" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SampleTabbedView/Views/NewItemPage.xaml.cs">
+    <Files>
+      <File FileName="SampleTabbedView/ViewModels/AboutViewModel.cs" Line="22" Column="1" />
+      <File FileName="SampleTabbedView/Views/NewItemPage.xaml" />
+      <File FileName="SampleTabbedView/Views/NewItemPage.xaml.cs" Line="55" Column="1" />
+      <File FileName="SampleTabbedView/Services/SampleService.cs" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
-          <Node name="SampleTabbedView" expanded="True" selected="True" />
+          <Node name="SampleTabbedView" expanded="True">
+            <Node name="SampleTabbedView" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="NewItemPage.xaml" expanded="True">
+                  <Node name="NewItemPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.Android PreferredExecutionTarget="Android.86S7N18923005406" />
+  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.Android PreferredExecutionTarget="Android.pixel_2_nougat_7_1_-_api_25" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

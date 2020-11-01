@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "IADjOMSQtFsEIU32bRDs06YNjYo3U7bNjcKL7mlnQ4Nja/Xatv2UDYgaA9qp8Ph8oOXQm67Tf4vGmy0CF0pC6g==",
+  "success": true,
+  "projectFilePath": "/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/SampleTabbedView.csproj",
+  "expectedPackageFiles": [
+    "/Users/mounika.bandaru/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "/Users/mounika.bandaru/.nuget/packages/xamarin.forms/4.6.0.1141/xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}
