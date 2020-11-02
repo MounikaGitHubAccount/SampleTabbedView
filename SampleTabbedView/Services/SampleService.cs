@@ -19,31 +19,38 @@ namespace SampleTabbedView.Services
         clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
         this.httpClient = new HttpClient();
     }
-    public async Task<List<NewsArticle>> FetchProjectCodeDetails()
+    public async Task<List<NewsArticle>> FetchData()
     {
         try
         {
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
-                List<NewsArticle> ProjectCodeList = new List<NewsArticle>();
-                var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=f023a2d747aa4b82ad9f2441ce30d039";
-                //var url = "https://newsapi.org/v2/everything?q=bitcoin&from=2020-10-01&sortBy=publishedAt&apiKey=f023a2d747aa4b82ad9f2441ce30d039";
-                //var url = "https://api.androidhive.info/contacts/";
-                HttpResponseMessage response = await httpClient.GetAsync(url);
-                //var response = await _httpClient.GetAsync(url).ConfigureAwait(false);
+                    var handler = new HttpClientHandler();
+                    handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+                    {
+                        return true;
+                    }; 
 
-                string Response_JSON = await response.Content.ReadAsStringAsync();
-                if (response.IsSuccessStatusCode)
-                {
-                    string content = await response.Content.ReadAsStringAsync();
-                    ProjectCodeList = JsonConvert.DeserializeObject<NewsExample>(content).articles;
+                    using (var client = new HttpServiceClient(handler))
+                    {
+                        List<NewsArticle> NewsList = new List<NewsArticle>();
+                        var url = "";
+                        url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=f023a2d747aa4b82ad9f2441ce30d039";
+                        HttpResponseMessage response = await client.GetAsync(url);
+                        string Response_JSON = await response.Content.ReadAsStringAsync();
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string content = await response.Content.ReadAsStringAsync();
+                            NewsList = JsonConvert.DeserializeObject<NewsExample>(content).articles;
+                            return NewsList;
+                        }
+                        else
+                        {
+                            Console.WriteLine(" Test:123" + response.RequestMessage);
+                        }
+                    }
                 }
-                else
-                {
-                    Console.WriteLine(" Test:123" + response.RequestMessage);
-                }
-            }
             else
             {
                 //await Application.Current.MainPage.DisplayAlert("", Resources.Strings.NetworkErrorMessage, "Ok");

@@ -18,10 +18,21 @@
              <customControl:CustomEntry Text="{Binding Item.Mobile}" FontSize="14" />
           </StackLayout>
             <StackLayout Grid.Row="1" Spacing="0" Padding="15">
-            <Grid IsEnabled="False">
-                    <customControl:CustomEntry Placeholder="This field is Disabled" PlaceholderColor="#c8c9cd" FontSize="14" Grid.Column="0" x:Name="searchData" Margin="0,0,0,0" Text="" TextColor="Black" HorizontalTextAlignment="Start" VerticalOptions="Center" />
-                    <Label Text="Upload" FontSize="14" Padding="10,5,20,5" HorizontalOptions="End" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="LightGray" TextColor="White"/>
-            </Grid>
+                <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                        <customControl:CustomEntry x:Name="imageName" Placeholder="This field is Disabled" PlaceholderColor="#c8c9cd" FontSize="14" Grid.Column="0" Margin="0,0,0,0" Text="" TextColor="Black" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+                        <Label Text="Upload" FontSize="14" Padding="10,5,20,5" HorizontalOptions="End" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="LightGray" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnPickPhotoButtonClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                      <Image Grid.Row="1" x:Name="image" HeightRequest="200" WidthRequest="200" Aspect="Fill"/>
+                </Grid>
+                </ScrollView>
          <!-- </Frame>-->
             <Grid Margin="0,20,0,0">
                 <Grid.ColumnDefinitions>

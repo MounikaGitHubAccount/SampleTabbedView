@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using GSSTaskApplication.Models;
 using Newtonsoft.Json;
+using SampleTabbedView.Models;
+using SampleTabbedView.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,20 +18,22 @@ namespace SampleTabbedView.Views
         public AboutPage()
         {
             InitializeComponent();
-            GetJsonData();
-        }
-        void GetJsonData()
-        {
-            string jsonFileName = "BitCoin.json";
-            BitCoin ObjContactList = new BitCoin();
-            var assembly = typeof(AboutPage).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream($"{assembly.GetName().Name}.{jsonFileName}");
-            using (var reader = new System.IO.StreamReader(stream))
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromMinutes(1);
+
+            var timer = new System.Threading.Timer((e) =>
             {
-                var jsonString = reader.ReadToEnd();
-                ObjContactList = JsonConvert.DeserializeObject<BitCoin>(jsonString);
-            }
-            Items.ItemsSource = ObjContactList.articles;
+                FetchDetails();
+            }, null, startTimeSpan, periodTimeSpan);
+            
+        }
+
+        public async Task<List<NewsArticle>> FetchDetails()
+        {
+            SampleService toolsData = new SampleService();
+            var SystemsData = await toolsData.FetchData();
+            Items.ItemsSource = SystemsData;
+            return SystemsData;
         }
     }
 }

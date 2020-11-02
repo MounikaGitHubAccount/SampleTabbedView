@@ -72,6 +72,7 @@
     <Compile Include="Renderers\CustomViewCell.cs" />
     <Compile Include="Renderers\CustomScrollViewRenderer.cs" />
     <Compile Include="Renderers\CustomEntryRenderer.cs" />
+    <Compile Include="Renderers\PhotoPickerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

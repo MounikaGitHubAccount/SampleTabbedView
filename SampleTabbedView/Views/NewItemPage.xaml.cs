@@ -6,13 +6,15 @@ using Xamarin.Forms.Xaml;
 
 using SampleTabbedView.Models;
 using System.Text.RegularExpressions;
+using System.IO;
+using SampleTabbedView.Services;
 
 namespace SampleTabbedView.Views
 {
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
-
+        public static ImageSource UploadedImage { get; set; }
         public NewItemPage()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace SampleTabbedView.Views
                 Email = "",
                 Designation = "",
                 Mobile = "",
-                Description = ""
+                Description = "",
+                ImageName = UploadedImage
             };
 
             BindingContext = this;
@@ -36,9 +39,6 @@ namespace SampleTabbedView.Views
 
         public static bool IsEmailValidate(string email)
         {
-            //string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-            //@"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
-            //return Regex.Match(email, emailRegex).Success;
             return Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success;
         }
 
@@ -78,6 +78,21 @@ namespace SampleTabbedView.Views
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        async void OnPickPhotoButtonClicked(object sender, EventArgs e)
+        {
+            (sender as Label).IsEnabled = false;
+
+            Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
+            if (stream != null)
+            {
+                image.Source = ImageSource.FromStream(() => stream);
+                UploadedImage = ImageSource.FromStream(() => stream);
+                imageName.Text = "UploadedImage.png";
+                MessagingCenter.Send(this, "selected", image.Source);
+            }
+            (sender as Label).IsEnabled = true;
         }
     }
 }

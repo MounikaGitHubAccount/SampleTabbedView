@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleTabbedView.Views.ItemDetailPage" Title="{Binding Title}">
-    <StackLayout Spacing="0" Padding="15">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+    <Frame Grid.Column="0" HasShadow="False" CornerRadius="0" BorderColor="Gray" Padding="0" HeightRequest="100" WidthRequest="100">
+                                <Grid>
+                                <Image Source="{Binding ImageName}" Aspect="AspectFill" />
+                                <!--<Label IsVisible="{Binding NoImage}" Text="No Image" TextColor="LightSkyBlue" FontSize="Micro" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>-->
+                                </Grid>
+                            </Frame>
+    <StackLayout Grid.Column="1" Spacing="0" Padding="15">
         <Label Text="Name:" FontSize="18" TextColor="Black"/>
         <Label Text="{Binding Item.Name}" FontSize="14" />
          <Label Text="Email:" FontSize="18" Margin="0,10,0,0" TextColor="Black"/>
@@ -10,4 +21,5 @@
          <Label Text="Mobile:" FontSize="18" Margin="0,10,0,0" TextColor="Black"/>
         <Label Text="{Binding Item.Mobile}" FontSize="14" />
     </StackLayout>
+    </Grid>
 </ContentPage>

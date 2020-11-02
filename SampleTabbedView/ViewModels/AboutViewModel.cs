@@ -18,26 +18,15 @@ namespace SampleTabbedView.ViewModels
         {
             NewsFieldCommand = new Command(NewsFieldOnClick);
             Title = "News";
-            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
-            FetchToolsDetails();
-
         }
 
         private void NewsFieldOnClick(object obj)
         {
-            var SelectedField = (Article)obj;
+            var SelectedField = (NewsArticle)obj;
             if (SelectedField != null)
             {
                 Launcher.OpenAsync(SelectedField.url);
             }
         }
-
-        public async Task<List<NewsArticle>> FetchToolsDetails()
-        {
-            SampleService toolsData = new SampleService();
-            var SystemsData = await toolsData.FetchProjectCodeDetails();
-            return SystemsData;
-        }
-        //public ICommand OpenWebCommand { get; }
     }
 }

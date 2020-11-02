@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using SampleTabbedView.ViewModels;
+using Xamarin.Forms;
 
 namespace SampleTabbedView.Models
 {
-    public class Item
+    public class Item : BaseViewModel
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -11,6 +13,17 @@ namespace SampleTabbedView.Models
         public string Designation { get; set; }
         public string Mobile { get; set; }
         public string Description { get; set; }
+        //public ImageSource ImageName { get; set; }
+        ImageSource _pageTitle;
+        public ImageSource ImageName
+        {
+            get => _pageTitle;
+            set
+            {
+                _pageTitle = value;
+                OnPropertyChanged("PageTitle");
+            }
+        }
     }
 
     public class Source
@@ -25,14 +38,39 @@ namespace SampleTabbedView.Models
         public string name { get; set; }
     }
 
-    public class NewsArticle
+    public class NewsArticle : BaseViewModel
     {
         public Source source { get; set; }
         public string author { get; set; }
         public string title { get; set; }
         public string description { get; set; }
         public string url { get; set; }
-        public string urlToImage { get; set; }
+        //public string urlToImage { get; set; }
+        string _urlToImage;
+        public string urlToImage
+        {
+            get { return _urlToImage; }
+            set
+            {
+                if (value == null || value == "")
+                {
+                    NoImage = true;
+                }
+                _urlToImage = value;
+                OnPropertyChanged("urlToImage");
+            }
+        }
+
+        bool _noImage = false;
+        public bool NoImage
+        {
+            get { return _noImage; }
+            set
+            {
+                _noImage = value;
+                OnPropertyChanged("NoImage");
+            }
+        }
         public DateTime publishedAt { get; set; }
         public string content { get; set; }
     }

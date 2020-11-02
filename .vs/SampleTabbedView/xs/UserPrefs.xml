@@ -1,11 +1,8 @@
-﻿<Properties StartupConfiguration="{34088161-495B-4262-816F-EA2AD562420C}|Default">
+﻿<Properties StartupConfiguration="{254CA2EF-F1D4-43F3-8D23-DD2F00F02091}|Default">
   <MonoDevelop.Ide.ItemProperties.SampleTabbedView.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5F021997-ED63-49D7-96D7-C6CF591EE64B" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SampleTabbedView/Views/NewItemPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SampleTabbedView/Views/AboutPage.xaml.cs">
     <Files>
-      <File FileName="SampleTabbedView/ViewModels/AboutViewModel.cs" Line="22" Column="1" />
-      <File FileName="SampleTabbedView/Views/NewItemPage.xaml" />
-      <File FileName="SampleTabbedView/Views/NewItemPage.xaml.cs" Line="55" Column="1" />
-      <File FileName="SampleTabbedView/Services/SampleService.cs" />
+      <File FileName="SampleTabbedView/Views/AboutPage.xaml.cs" Line="27" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,22 +10,31 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="SampleTabbedView" expanded="True">
             <Node name="SampleTabbedView" expanded="True">
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="NewItemPage.xaml" expanded="True">
-                  <Node name="NewItemPage.xaml.cs" selected="True" />
+                <Node name="AboutPage.xaml" expanded="True">
+                  <Node name="AboutPage.xaml.cs" selected="True" />
                 </Node>
+                <Node name="ItemsPage.xaml" expanded="True" />
+                <Node name="NewItemPage.xaml" expanded="True" />
               </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.Android PreferredExecutionTarget="Android.pixel_2_nougat_7_1_-_api_25" />
+  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.Android PreferredExecutionTarget="Android.86S7N18923005406" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Views/NewItemPage.xaml.cs" relfile="SampleTabbedView/Views/NewItemPage.xaml.cs" line="55" column="1" />
+      <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Services/SampleService.cs" relfile="SampleTabbedView/Services/SampleService.cs" line="47" column="1" />
+      <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Views/AboutPage.xaml.cs" relfile="SampleTabbedView/Views/AboutPage.xaml.cs" line="27" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
