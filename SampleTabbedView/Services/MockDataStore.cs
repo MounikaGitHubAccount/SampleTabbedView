@@ -14,12 +14,12 @@ namespace SampleTabbedView.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = "123" }
+                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is an item description.", Email = "test@xyz.com", Designation = "SE", Mobile = 123 }
            };
         }
 

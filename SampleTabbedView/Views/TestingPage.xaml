@@ -1,9 +1,87 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns="http://xamarin.com/schemas/2014/forms" x:Name="this"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customControl="clr-namespace:SampleTabbedView.CustomRenders"
     x:Class="SampleTabbedView.Views.TestingPage">
 
-    <ContentPage.Content>
-    </ContentPage.Content>
+      <!--<Grid RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+          <StackLayout Grid.Row="0" Spacing="0" Padding="15">
+            <Label Text="Name" FontSize="15" TextColor="Black" />
+            <customControl:CustomEntry Text="{Binding Name}" FontSize="14" />
+            <Label Text="Designation" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Designation}" FontSize="14" />
+            <Label Text="Email" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Email}" FontSize="14" />
+            <Label Text="Mobile" FontSize="15" TextColor="Black" Margin="0,10,0,0"/>
+             <customControl:CustomEntry Text="{Binding Mobile}" FontSize="14" />
+          </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="0" Padding="15">
+                <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                        <customControl:CustomEntry x:Name="imageName" Placeholder="This field is Disabled" PlaceholderColor="#c8c9cd" FontSize="14" Grid.Column="0" Margin="0,0,0,0" Text="" TextColor="Black" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+                        <Label Text="Upload" IsEnabled="{Binding IsEnabled}" FontSize="14" Padding="10,5,20,5" HorizontalOptions="End" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="LightGray" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding UploadCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                      <Image Grid.Row="1" x:Name="image" Source="{Binding ImageName}" HeightRequest="200" WidthRequest="200" Aspect="Fill"/>
+                </Grid>
+                </ScrollView>
+          </Frame>
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Cancel" TextColor="White" BackgroundColor="LightGray" Margin="10,0,30,0" Padding="0" Command="{Binding Path=BindingContext.CancelCommand, Source={x:Reference this}}"
+                                                        CommandParameter="{Binding .}"/>
+                <Button Grid.Column="1" Text="Save" TextColor="White" BackgroundColor="LightSkyBlue" Margin="30,0,10,0" Padding="0" Command="{Binding Path=BindingContext.SaveCommand, Source={x:Reference this}}"
+                                                        CommandParameter="{Binding .}"/>
+            </Grid>
+        </StackLayout>
+        </Grid>-->
+        <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding Items}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20,0,20,0">
+                    <Frame Margin="20,10,20,10" BorderColor="LightGray" BackgroundColor="White">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0" HasShadow="False" CornerRadius="45" HeightRequest="50" WidthRequest="50" BorderColor="Gray">
+                                <Image Source="profile.png" Aspect="AspectFit"/>
+                            </Frame>
+                        <Grid Grid.Column="1" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="1" Text="{Binding Designation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            <Label Grid.Row="2" Text="{Binding Email}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="3" Text="{Binding Mobile}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"/>
+                        </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnItemSelected"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
 </ContentPage>

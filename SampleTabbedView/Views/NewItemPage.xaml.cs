@@ -24,9 +24,9 @@ namespace SampleTabbedView.Views
                 Name = "",
                 Email = "",
                 Designation = "",
-                Mobile = "",
+                Mobile = 0,
                 Description = "",
-                ImageName = UploadedImage
+                ImageName = "profile.png"
             };
 
             BindingContext = this;
@@ -34,7 +34,7 @@ namespace SampleTabbedView.Views
 
         public static bool IsPhoneNumber(string number)
         {
-            return Regex.Match(number, @"^(\+[0-9]{12})$").Success;
+            return Regex.Match(number, @"^(\[0-9]{9})$").Success;
         }
 
         public static bool IsEmailValidate(string email)
@@ -44,21 +44,22 @@ namespace SampleTabbedView.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            if (Item.Name != "" && Item.Email != "" && Item.Designation != "" && Item.Mobile != "")
+            if (Item.Name != "" && Item.Email != "" && Item.Designation != "" && Item.Mobile != 0)
             {
                 //Console.WriteLine("{0}correctly entered", IsPhoneNumber(Item.Mobile) ? "" : "in");
                
 
                 if (IsEmailValidate(Item.Email))
                 {
-                    if (IsPhoneNumber(Item.Mobile))
+                    //if (IsPhoneNumber(Item.Mobile))
+                    if (Item?.Mobile.ToString().Length ==9)
                     {
                         MessagingCenter.Send(this, "AddItem", Item);
                         await Navigation.PopModalAsync();
                     }
                     else
                     {
-                        await DisplayAlert("", "Please enter valid Phone Number", "OK");
+                        await DisplayAlert("", "Please enter valid 10 digit Phone Number", "OK");
                     }
                     //MessagingCenter.Send(this, "AddItem", Item);
                     //await Navigation.PopModalAsync();

@@ -36,7 +36,7 @@ namespace SampleTabbedView.Droid
     //    }
     //}
 
-    [Activity(Label = "DependencyServiceDemos", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "SampleTabbedView", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }

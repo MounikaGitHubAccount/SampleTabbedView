@@ -3,14 +3,14 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-    <Frame Grid.Column="0" HasShadow="False" CornerRadius="0" BorderColor="Gray" Padding="0" HeightRequest="100" WidthRequest="100">
+    <!--<Frame Grid.Column="0" HasShadow="False" CornerRadius="0" BorderColor="Gray" Padding="0" HeightRequest="100" WidthRequest="100">
                                 <Grid>
-                                <Image Source="{Binding ImageName}" Aspect="AspectFill" />
-                                <!--<Label IsVisible="{Binding NoImage}" Text="No Image" TextColor="LightSkyBlue" FontSize="Micro" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>-->
+                                <Image Source="{Binding ImageName}" HeightRequest="50" WidthRequest="50" />
+                                <Label IsVisible="{Binding NoImage}" Text="No Image" TextColor="LightSkyBlue" FontSize="Micro" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                                 </Grid>
-                            </Frame>
+                            </Frame>-->
     <StackLayout Grid.Column="1" Spacing="0" Padding="15">
         <Label Text="Name:" FontSize="18" TextColor="Black"/>
         <Label Text="{Binding Item.Name}" FontSize="14" />

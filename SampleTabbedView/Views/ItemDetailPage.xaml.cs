@@ -28,7 +28,7 @@ namespace SampleTabbedView.Views
                 Name = "",
                 Email = "",
                 Designation = "",
-                Mobile = "",
+                Mobile = 0,
                 Description = ""
             };
 

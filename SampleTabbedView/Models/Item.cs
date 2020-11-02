@@ -11,17 +11,16 @@ namespace SampleTabbedView.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Designation { get; set; }
-        public string Mobile { get; set; }
+        public int? Mobile { get; set; }
         public string Description { get; set; }
-        //public ImageSource ImageName { get; set; }
-        ImageSource _pageTitle;
-        public ImageSource ImageName
+        string _imageName = "profile.png";
+        public string ImageName
         {
-            get => _pageTitle;
+            get => _imageName;
             set
             {
-                _pageTitle = value;
-                OnPropertyChanged("PageTitle");
+                _imageName = value;
+                OnPropertyChanged("ImageName");
             }
         }
     }

@@ -20,19 +20,20 @@ namespace SampleTabbedView.Views
             InitializeComponent();
             var startTimeSpan = TimeSpan.Zero;
             var periodTimeSpan = TimeSpan.FromMinutes(1);
-
             var timer = new System.Threading.Timer((e) =>
             {
                 FetchDetails();
             }, null, startTimeSpan, periodTimeSpan);
-            
+
         }
 
         public async Task<List<NewsArticle>> FetchDetails()
         {
+            Loader.IsVisible = true;
             SampleService toolsData = new SampleService();
             var SystemsData = await toolsData.FetchData();
             Items.ItemsSource = SystemsData;
+            Loader.IsVisible = false;
             return SystemsData;
         }
     }
