@@ -9,7 +9,13 @@
    <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-     <CollectionView x:Name="Items" ItemsSource="{Binding NewsFields}" SelectedItem="{Binding SelectedField, Mode=TwoWay}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+     <Label Grid.Row="0" x:Name="lblNodata" IsVisible="{Binding NoData}" Text="No records found." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="16" TextColor="Gray" Margin="10"/>
+     <CollectionView Grid.Row="1" x:Name="Items" ItemsSource="{Binding NewsFields}" SelectedItem="{Binding SelectedField, Mode=TwoWay}" BackgroundColor="White">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="20,0,20,0">
@@ -34,9 +40,9 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding author}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Grid.Row="1" Text="{Binding title}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-                            <Label Grid.Row="2" Text="{Binding description}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="0" Text="{Binding author}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" TextColor="Black" />
+                            <Label Grid.Row="1" Text="{Binding title}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Black" />
+                            <Label Grid.Row="2" Text="{Binding description}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" TextColor="Black" />
                             <Label Grid.Row="3" TextColor="#000000" TextDecorations="Underline" FontSize="18">
                                         <Label.FormattedText>
                                             <FormattedString>
@@ -62,5 +68,20 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-                     
+        
+            <Grid Grid.Row="1" x:Name="loader" IsVisible="{Binding IsLoader}" BackgroundColor="Red">
+                    <Frame Padding="0" BackgroundColor="Transparent" CornerRadius="15" HasShadow="false" VerticalOptions="Center" HorizontalOptions="Center"> 
+                        <StackLayout Padding="40,10,40,10" >
+                            <ActivityIndicator 
+                                   IsRunning="true"  
+                                   IsEnabled="False" 
+                                   Color="Gray"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/> 
+                            <Label Text="{Binding LoaderText}" TextColor="#000000" FontSize="17" />  
+
+                        </StackLayout>
+                    </Frame>
+        </Grid>
+                </Grid>     
 </ContentPage>

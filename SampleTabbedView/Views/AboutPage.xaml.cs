@@ -18,20 +18,6 @@ namespace SampleTabbedView.Views
         public AboutPage()
         {
             InitializeComponent();
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromMinutes(1);
-            var timer = new System.Threading.Timer((e) =>
-            {
-                FetchDetails();
-            }, null, startTimeSpan, periodTimeSpan);
-        }
-
-        public async Task<List<NewsArticle>> FetchDetails()
-        {
-            SampleService toolsData = new SampleService();
-            var SystemsData = await toolsData.FetchData();
-            Items.ItemsSource = SystemsData;
-            return SystemsData;
         }
     }
 }

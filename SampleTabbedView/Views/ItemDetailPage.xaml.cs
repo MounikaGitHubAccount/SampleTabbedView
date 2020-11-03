@@ -28,8 +28,6 @@ namespace SampleTabbedView.Views
                 Name = "",
                 Email = "",
                 Designation = "",
-                Mobile = 0,
-                Description = ""
             };
 
             viewModel = new ItemDetailViewModel(item);

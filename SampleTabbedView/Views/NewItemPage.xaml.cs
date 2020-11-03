@@ -8,22 +8,24 @@ using SampleTabbedView.Models;
 using System.Text.RegularExpressions;
 using System.IO;
 using SampleTabbedView.Services;
+using SampleTabbedView.ViewModels;
 
 namespace SampleTabbedView.Views
 {
     public partial class NewItemPage : ContentPage
     {
+        ItemsViewModel _itemsViewModel;
         public Item Item { get; set; }
         public NewItemPage()
         {
             InitializeComponent();
-
+            //_itemsViewModel = new ItemsViewModel();
+            //BindingContext = _itemsViewModel;
             Item = new Item
             {
                 Name = "",
                 Email = "",
                 Designation = "",
-                Mobile = 0,
                 Description = "",
                 ImageName = ""
             };
@@ -50,6 +52,19 @@ namespace SampleTabbedView.Views
                     //if (IsPhoneNumber(Item.Mobile))
                     if (Item?.Mobile.ToString().Trim().Length ==9)
                     {
+                        //    Item task = new Item()
+                        //    {
+                        //        Name = Item.Name,
+                        //        Email = Item.Email,
+                        //        Mobile = Item.Mobile,
+                        //        Designation = Item.Designation
+                        //    };
+
+                        ////Add New Task  
+                        //await App.TasksDatabase.SaveTaskAsync(task);
+                        //await Application.Current.MainPage.DisplayAlert("Success", "Task added Successfully", "OK");
+                        //Get All Tasks  
+                        //_itemsViewModel.Items1 = await App.TasksDatabase.GetTaskAsync();
                         MessagingCenter.Send(this, "AddItem", Item);
                         await Navigation.PopModalAsync();
                     }

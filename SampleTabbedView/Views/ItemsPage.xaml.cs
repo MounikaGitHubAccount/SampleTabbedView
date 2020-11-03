@@ -21,8 +21,8 @@ namespace SampleTabbedView.Views
         public ItemsPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new ItemsViewModel();
+            viewModel = new ItemsViewModel();
+            BindingContext = viewModel;
         }
 
         async void OnItemSelected(object sender, EventArgs args)
@@ -42,7 +42,10 @@ namespace SampleTabbedView.Views
             base.OnAppearing();
 
             if (viewModel.Items.Count == 0)
-                viewModel.IsBusy = true;
+            { viewModel.IsBusy = true; }
+
+            //viewModel.Items1 = await App.TasksDatabase.GetTaskAsync();
+
         }
     }
 }

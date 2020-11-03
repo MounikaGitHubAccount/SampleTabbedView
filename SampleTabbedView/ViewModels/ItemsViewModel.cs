@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using SampleTabbedView.Models;
 using SampleTabbedView.Views;
+using System.Collections.Generic;
 
 namespace SampleTabbedView.ViewModels
 {
@@ -18,9 +19,8 @@ namespace SampleTabbedView.ViewModels
         public ItemsViewModel()
         {
             Title = "GSSTask";
-            Items = new ObservableCollection<Item>();
+             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as Item;
@@ -28,6 +28,21 @@ namespace SampleTabbedView.ViewModels
                 await DataStore.AddItemAsync(newItem);
             });
         }
+        //async void test()
+        //{
+        //    Items1 = await App.TasksDatabase.GetTaskAsync();
+        //}
+
+        //List<Item> _items1;
+        //public List<Item> Items1
+        //{
+        //    get { return _items1; }
+        //    set
+        //    {
+        //        _items1 = value;
+        //        OnPropertyChanged("Items1");
+        //    }
+        //}
 
         async Task ExecuteLoadItemsCommand()
         {
@@ -37,6 +52,7 @@ namespace SampleTabbedView.ViewModels
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
+               // var items = await App.TasksDatabase.GetTaskAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);

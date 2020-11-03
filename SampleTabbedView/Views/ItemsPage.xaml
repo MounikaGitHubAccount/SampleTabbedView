@@ -4,10 +4,10 @@
         <ToolbarItem Text="Register" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
-        <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding Items}" >
+        <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding Items}"  BackgroundColor="White">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="20,0,20,0">
+                    <Grid Margin="20,0,20,0"  BackgroundColor="White">
                     <Frame Margin="20,10,20,10" BorderColor="LightGray" BackgroundColor="White">
                         <Grid ColumnSpacing="10">
                             <Grid.ColumnDefinitions>
@@ -25,10 +25,10 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Grid.Row="1" Text="{Binding Designation}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-                            <Label Grid.Row="2" Text="{Binding Email}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Grid.Row="3" Text="{Binding Mobile}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"/>
+                            <Label Grid.Row="0" Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" TextColor="Black" />
+                            <Label Grid.Row="1" Text="{Binding Designation}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Black" />
+                            <Label Grid.Row="2" Text="{Binding Email}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" TextColor="Black" />
+                            <Label Grid.Row="3" Text="{Binding Mobile}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Black"/>
                         </Grid>
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnItemSelected"/>
