@@ -19,6 +19,10 @@ namespace SampleTabbedView.Models
             get => _imageName;
             set
             {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    value = "profile.png";
+                }
                 _imageName = value;
                 OnPropertyChanged("ImageName");
             }

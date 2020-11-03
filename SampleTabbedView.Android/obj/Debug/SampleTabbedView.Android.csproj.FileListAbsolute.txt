@@ -60,6 +60,12 @@
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SampleTabbedView.Android.pdb
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SampleTabbedView.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SampleTabbedView.pdb
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLite-net.dll
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.batteries_v2.dll
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.core.dll
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.lib.e_sqlite3.android.dll
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.provider.e_sqlite3.dll
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Buffers.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.ComponentModel.Composition.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.ComponentModel.Composition.pdb
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Core.dll
@@ -75,6 +81,7 @@
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.IO.Compression.FileSystem.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.IO.Compression.FileSystem.pdb
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.IO.Compression.pdb
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Memory.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Net.Http.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Net.Http.pdb
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Numerics.dll
@@ -82,6 +89,7 @@
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Numerics.Vectors.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Numerics.Vectors.pdb
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.pdb
+/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Runtime.CompilerServices.Unsafe.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Runtime.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Runtime.Serialization.dll
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Runtime.Serialization.pdb
@@ -467,11 +475,3 @@
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLite-net.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.batteries_v2.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.core.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.lib.e_sqlite3.android.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/SQLitePCLRaw.provider.e_sqlite3.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Buffers.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Memory.dll
-/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView.Android/obj/Debug/android/assets/System.Runtime.CompilerServices.Unsafe.dll

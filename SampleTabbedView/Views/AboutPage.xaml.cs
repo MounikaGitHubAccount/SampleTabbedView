@@ -24,16 +24,13 @@ namespace SampleTabbedView.Views
             {
                 FetchDetails();
             }, null, startTimeSpan, periodTimeSpan);
-
         }
 
         public async Task<List<NewsArticle>> FetchDetails()
         {
-            Loader.IsVisible = true;
             SampleService toolsData = new SampleService();
             var SystemsData = await toolsData.FetchData();
             Items.ItemsSource = SystemsData;
-            Loader.IsVisible = false;
             return SystemsData;
         }
     }

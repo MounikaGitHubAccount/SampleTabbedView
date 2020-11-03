@@ -12,10 +12,11 @@
                         <Grid ColumnSpacing="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Frame Grid.Column="0" HasShadow="False" CornerRadius="45" HeightRequest="50" WidthRequest="50" BorderColor="Gray">
-                                <Image Source="profile.png" Aspect="AspectFit"/>
+                                <!--<Image Source="profile.png" Aspect="AspectFit"/>-->
+                                <Image Source="{Binding ImageName}" Aspect="AspectFit"/>
                             </Frame>
                         <Grid Grid.Column="1" RowSpacing="0">
                             <Grid.RowDefinitions>
@@ -24,10 +25,10 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Grid.Row="1" Text="{Binding Designation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-                            <Label Grid.Row="2" Text="{Binding Email}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Grid.Row="3" Text="{Binding Mobile}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"/>
+                            <Label Grid.Row="0" Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="1" Text="{Binding Designation}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            <Label Grid.Row="2" Text="{Binding Email}" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Grid.Row="3" Text="{Binding Mobile}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"/>
                         </Grid>
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnItemSelected"/>

@@ -14,7 +14,6 @@ namespace SampleTabbedView.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
-        public static ImageSource UploadedImage { get; set; }
         public NewItemPage()
         {
             InitializeComponent();
@@ -26,7 +25,7 @@ namespace SampleTabbedView.Views
                 Designation = "",
                 Mobile = 0,
                 Description = "",
-                ImageName = "profile.png"
+                ImageName = ""
             };
 
             BindingContext = this;
@@ -45,14 +44,11 @@ namespace SampleTabbedView.Views
         async void Save_Clicked(object sender, EventArgs e)
         {
             if (Item.Name != "" && Item.Email != "" && Item.Designation != "" && Item.Mobile != 0)
-            {
-                //Console.WriteLine("{0}correctly entered", IsPhoneNumber(Item.Mobile) ? "" : "in");
-               
-
-                if (IsEmailValidate(Item.Email))
+            {               
+                if (IsEmailValidate(Item.Email.Trim()))
                 {
                     //if (IsPhoneNumber(Item.Mobile))
-                    if (Item?.Mobile.ToString().Length ==9)
+                    if (Item?.Mobile.ToString().Trim().Length ==9)
                     {
                         MessagingCenter.Send(this, "AddItem", Item);
                         await Navigation.PopModalAsync();
@@ -61,8 +57,6 @@ namespace SampleTabbedView.Views
                     {
                         await DisplayAlert("", "Please enter valid 10 digit Phone Number", "OK");
                     }
-                    //MessagingCenter.Send(this, "AddItem", Item);
-                    //await Navigation.PopModalAsync();
                 }
                 else
                 {
@@ -89,9 +83,7 @@ namespace SampleTabbedView.Views
             if (stream != null)
             {
                 image.Source = ImageSource.FromStream(() => stream);
-                UploadedImage = ImageSource.FromStream(() => stream);
                 imageName.Text = "UploadedImage.png";
-                MessagingCenter.Send(this, "selected", image.Source);
             }
             (sender as Label).IsEnabled = true;
         }

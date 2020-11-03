@@ -9,8 +9,6 @@
    <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    <Grid>
-                    <Grid Margin="20,0,20,0">
      <CollectionView x:Name="Items" ItemsSource="{Binding NewsFields}" SelectedItem="{Binding SelectedField, Mode=TwoWay}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -64,21 +62,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-                    </Grid>
-                        <Grid x:Name="Loader" BackgroundColor="Transparent">
-                        <Frame Padding="0" BackgroundColor="Transparent" CornerRadius="15" HasShadow="false" VerticalOptions="Center" HorizontalOptions="Center"> 
-                            <StackLayout Padding="40,10,40,10" >
-                                <ActivityIndicator 
-                                       IsRunning="true"  
-                                       IsEnabled="False" 
-                                       Color="Gray"
-                                       BackgroundColor="Transparent"
-                                       VerticalOptions="Center"/> 
-                                <Label Text="Loading.." TextColor="#000000" FontSize="17" />  
-
-                                </StackLayout>
-                            </Frame>
-                        </Grid>
-                    </Grid>
                      
 </ContentPage>

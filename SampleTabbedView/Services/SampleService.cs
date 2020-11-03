@@ -13,24 +13,24 @@ namespace SampleTabbedView.Services
     {
         HttpClient httpClient;
         DateTime requestTime;
-    public SampleService()
-    {
-        HttpClientHandler clientHandler = new HttpClientHandler();
-        clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-        this.httpClient = new HttpClient();
-    }
-    public async Task<List<NewsArticle>> FetchData()
-    {
-        try
+        public SampleService()
         {
-            var current = Connectivity.NetworkAccess;
-            if (current == NetworkAccess.Internet)
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            this.httpClient = new HttpClient();
+        }
+        public async Task<List<NewsArticle>> FetchData()
+        {
+            try
             {
+                var current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet)
+                {
                     var handler = new HttpClientHandler();
                     handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
                     {
                         return true;
-                    }; 
+                    };
 
                     using (var client = new HttpServiceClient(handler))
                     {
@@ -51,19 +51,19 @@ namespace SampleTabbedView.Services
                         }
                     }
                 }
-            else
-            {
-                //await Application.Current.MainPage.DisplayAlert("", Resources.Strings.NetworkErrorMessage, "Ok");
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("", "NetworkErrorMessage", "Ok");
+                }
             }
-        }
-        catch (Exception Exe)
-        {
+            catch (Exception Exe)
+            {
+
+            }
+
+            return null;
 
         }
-
-        return null;
 
     }
-
-}
 }
