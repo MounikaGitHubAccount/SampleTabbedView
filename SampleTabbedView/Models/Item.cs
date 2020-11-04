@@ -11,7 +11,20 @@ namespace SampleTabbedView.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Designation { get; set; }
-        public int? Mobile { get; set; }
+       // public int? Mobile { get; set; }
+        int? _mobile;
+        public int? Mobile
+        {
+            get => _mobile;
+            set
+            {
+                if (value != null)
+                {
+                    _mobile = value;
+                }
+                OnPropertyChanged("Mobile");
+            }
+        }
         public string Description { get; set; }
         string _imageName = "profile.png";
         public string ImageName

@@ -36,7 +36,7 @@ namespace SampleTabbedView.Services
                     {
                         List<NewsArticle> NewsList = new List<NewsArticle>();
                         var url = "";
-                        url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=f023a2d747aa4b82ad9f2441ce30d039";
+                        url = "http://newsapi.org/v2/top-headlines?country=in&apiKey=833ca843b58d482b8219e2665ca77afd";
                         HttpResponseMessage response = await client.GetAsync(url);
                         string Response_JSON = await response.Content.ReadAsStringAsync();
                         if (response.IsSuccessStatusCode)

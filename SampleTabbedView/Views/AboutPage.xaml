@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-     <Label Grid.Row="0" x:Name="lblNodata" IsVisible="{Binding NoData}" Text="No records found." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="16" TextColor="Gray" Margin="10"/>
+     <Label Grid.Row="0" x:Name="lblNodata" IsVisible="false" Text="Loading the data." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" Margin="10"/>
      <CollectionView Grid.Row="1" x:Name="Items" ItemsSource="{Binding NewsFields}" SelectedItem="{Binding SelectedField, Mode=TwoWay}" BackgroundColor="White">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -69,7 +69,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         
-            <Grid Grid.Row="1" x:Name="loader" IsVisible="{Binding IsLoader}" BackgroundColor="Red">
+            <!--<Grid Grid.Row="1" x:Name="loader" IsVisible="{Binding IsLoader}" BackgroundColor="Red">
                     <Frame Padding="0" BackgroundColor="Transparent" CornerRadius="15" HasShadow="false" VerticalOptions="Center" HorizontalOptions="Center"> 
                         <StackLayout Padding="40,10,40,10" >
                             <ActivityIndicator 
@@ -82,6 +82,6 @@
 
                         </StackLayout>
                     </Frame>
-        </Grid>
+        </Grid>-->
                 </Grid>     
 </ContentPage>

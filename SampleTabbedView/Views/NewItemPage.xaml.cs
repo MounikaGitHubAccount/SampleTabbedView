@@ -45,12 +45,12 @@ namespace SampleTabbedView.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            if (Item.Name != "" && Item.Email != "" && Item.Designation != "" && Item.Mobile != 0)
+            if (Item.Name.Trim() != "" && Item.Email.Trim() != "" && Item.Designation.Trim() != "" && Item.Mobile != 0)
             {               
                 if (IsEmailValidate(Item.Email.Trim()))
                 {
                     //if (IsPhoneNumber(Item.Mobile))
-                    if (Item?.Mobile.ToString().Trim().Length ==9)
+                    if (Item?.Mobile.ToString().Length == 10 || Item?.Mobile.ToString().Length == 9)
                     {
                         //    Item task = new Item()
                         //    {

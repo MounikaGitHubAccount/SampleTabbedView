@@ -39,8 +39,7 @@ namespace SampleTabbedView.ViewModels
         {
             SampleService toolsData = new SampleService();
             var SystemsData = await toolsData.FetchData();
-            NewsFields = SystemsData;
-            if (NewsFields != null || NewsFields.Count == 0)
+            if (SystemsData != null || SystemsData.Count == 0)
             {
                 NoData = false;
                 IsLoader = false;
@@ -50,6 +49,7 @@ namespace SampleTabbedView.ViewModels
                 NoData = true;
                 IsLoader = true;
             }
+            NewsFields = SystemsData;
             return SystemsData;
         }
 
@@ -81,7 +81,10 @@ namespace SampleTabbedView.ViewModels
             get { return _myDeliveriesData; }
             set
             {
-                _myDeliveriesData = value;
+                if (value!=null)
+                {
+                    _myDeliveriesData = value;
+                }
                 OnPropertyChanged("NewsFields");
             }
         }

@@ -1,21 +1,11 @@
-﻿<Properties StartupConfiguration="{34088161-495B-4262-816F-EA2AD562420C}|Default">
-  <MonoDevelop.Ide.ItemProperties.SampleTabbedView.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5F021997-ED63-49D7-96D7-C6CF591EE64B" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SampleTabbedView/Views/AboutPage.xaml">
-    <Files>
-      <File FileName="SampleTabbedView/Views/AboutPage.xaml.cs" Line="20" Column="35" />
-      <File FileName="SampleTabbedView/Views/AboutPage.xaml" Line="11" Column="34" />
-    </Files>
+﻿<Properties StartupConfiguration="{254CA2EF-F1D4-43F3-8D23-DD2F00F02091}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
           <Node name="SampleTabbedView" expanded="True">
-            <Node name="SampleTabbedView" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="AboutPage.xaml" expanded="True" selected="True" />
-              </Node>
-            </Node>
-            <Node name="SampleTabbedView.iOS" expanded="True" />
+            <Node name="SampleTabbedView.Android" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -26,12 +16,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Services/SampleService.cs" relfile="SampleTabbedView/Services/SampleService.cs" line="47" column="1" />
       <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/ViewModels/TestingViewModel.cs" relfile="SampleTabbedView/ViewModels/TestingViewModel.cs" line="21" column="1" />
       <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Views/RegistrationPage.xaml.cs" relfile="SampleTabbedView/Views/RegistrationPage.xaml.cs" line="9" column="1" />
       <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/ViewModels/RegisterViewModel.cs" relfile="SampleTabbedView/ViewModels/RegisterViewModel.cs" line="13" column="1" />
       <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/ViewModels/TestingViewModel.cs" relfile="SampleTabbedView/ViewModels/TestingViewModel.cs" line="13" column="1" />
       <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Views/TestingPage.xaml.cs" relfile="SampleTabbedView/Views/TestingPage.xaml.cs" line="13" column="1" />
+      <Breakpoint file="/Users/mounika.bandaru/Documents/GitHub/SampleTabbedView/SampleTabbedView/Views/NewItemPage.xaml.cs" relfile="SampleTabbedView/Views/NewItemPage.xaml.cs" line="65" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
